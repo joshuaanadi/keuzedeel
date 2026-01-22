@@ -4,73 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8646b5cd-69ab-4a58-b776-50e4ce969e6f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.github/workflows/issues.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.github/workflows/pull-requests.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.github/workflows/tests.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.github/workflows/update-changelog.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.styleci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Models/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bootstrap/providers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/cache.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/database.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/filesystems.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/logging.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/mail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/queue.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/services.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/config/session.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/migrations/0001_01_01_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/migrations/0001_01_01_000001_create_cache_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/migrations/0001_01_01_000002_create_jobs_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/seeders/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/app/private/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/storage/logs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/tests/Pest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/vite.config.js" beforeDir="false" />
-    </list>
+    <list default="true" id="8646b5cd-69ab-4a58-b776-50e4ce969e6f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -287,7 +221,7 @@
       <workItem from="1768896523289" duration="1720000" />
       <workItem from="1768920294583" duration="204000" />
       <workItem from="1769068307423" duration="7000" />
-      <workItem from="1769076990607" duration="1463000" />
+      <workItem from="1769076990607" duration="1617000" />
     </task>
     <servers />
   </component>
