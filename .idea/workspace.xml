@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8646b5cd-69ab-4a58-b776-50e4ce969e6f" name="Changes" comment="" />
+    <list default="true" id="8646b5cd-69ab-4a58-b776-50e4ce969e6f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,6 +161,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="38A7wqMa2fAHPpDIq2tmtmpEg0X" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -190,9 +195,6 @@
       <option name="pestRunnerSettings">
         <PestRunner configuration_file="$PROJECT_DIR$/project/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
       </option>
-      <option name="runnerSettings">
-        <PhpTestRunnerSettings configuration_file="$PROJECT_DIR$/project/phpunit.xml" scope="ConfigurationFile" use_alternative_configuration_file="true" />
-      </option>
       <method v="2" />
     </configuration>
   </component>
@@ -221,7 +223,8 @@
       <workItem from="1768896523289" duration="1720000" />
       <workItem from="1768920294583" duration="204000" />
       <workItem from="1769068307423" duration="7000" />
-      <workItem from="1769076990607" duration="1617000" />
+      <workItem from="1769076990607" duration="2386000" />
+      <workItem from="1769434819774" duration="2250000" />
     </task>
     <servers />
   </component>
