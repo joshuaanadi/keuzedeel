@@ -9,7 +9,11 @@ use Illuminate\Validation\Rule;
 
 class GebruikerController extends Controller
 {
-    // Register
+    public function registerForm()
+    {
+        return view('gebruiker.register');
+    }
+
     public function register(Request $request)
     {
         $validated = $request->validate([
@@ -17,20 +21,26 @@ class GebruikerController extends Controller
             'studentnummer' => 'required|string|max:20|unique:gebruikers,studentnummer',
             'name' => 'required|string|max:255',
             'password' => 'required|string|min:8|confirmed',
+            'klas' => ['required', Rule::in(['PALVSOD2A', 'PALVSOD2B', 'PALVSOD2C'])],
         ]);
 
-        $gebruiker = new Gebruiker;
-        $gebruiker->email = $validated['email'];
-        $gebruiker->studentnummer = $validated['studentnummer'];
-        $gebruiker->name = $validated['name'];
-        $gebruiker->password = Hash::make($validated['password']);
-        $gebruiker->role = 'student';
-        $gebruiker->save();
+        Gebruiker::create([
+            'email' => $validated['email'],
+            'studentnummer' => $validated['studentnummer'],
+            'name' => $validated['name'],
+            'password' => Hash::make($validated['password']),
+            'role' => 'student',
+            'klas' => $validated['klas'],
+        ]);
 
-        return redirect('/welcome');
+        return redirect('/login');
     }
 
-    // Login
+    public function loginForm()
+    {
+        return view('gebruiker.login');
+    }
+
     public function login(Request $request)
     {
         $request->validate([
@@ -40,63 +50,76 @@ class GebruikerController extends Controller
 
         $gebruiker = Gebruiker::where('email', $request->email)->first();
 
-        if ($gebruiker && Hash::check($request->password, $gebruiker->password)) {
-            session(['gebruiker_id' => $gebruiker->id]);
-
-            return $gebruiker->role === 'admin'
-                ? redirect('/dashboard')
-                : redirect('/welcome');
+        if (!$gebruiker || !Hash::check($request->password, $gebruiker->password)) {
+            return back()->withErrors([
+                'login' => 'Email or password incorrect',
+            ]);
         }
 
-        return back()->withErrors([
-            'email' => 'Login failed'
-        ]);
+        session(['gebruiker_id' => $gebruiker->id]);
+
+        return $gebruiker->role === 'admin'
+            ? redirect('/dashboard')
+            : redirect('/home');
     }
 
-    // Update Student
+    public function logout()
+    {
+        session()->flush();
+        return redirect('/login');
+    }
+
+    public function dashboard()
+    {
+        if (!session()->has('gebruiker_id')) {
+            return redirect('/login');
+        }
+        $gebruiker = Gebruiker::find(session('gebruiker_id'));
+        if ($gebruiker->role !== 'admin') {
+            abort(403);
+        }
+        $gebruikers = Gebruiker::where('role', 'student')->get();
+        return view('dashboard', compact('gebruikers'));
+    }
+
+    public function home()
+    {
+        if (!session()->has('gebruiker_id')) {
+            return redirect('/login');
+        }
+        return view('home');
+    }
+
+    public function edit($id)
+    {
+        $gebruiker = Gebruiker::findOrFail($id);
+        return view('gebruiker.edit', compact('gebruiker'));
+    }
+
     public function update(Request $request, $id)
     {
         $gebruiker = Gebruiker::findOrFail($id);
 
         $validated = $request->validate([
-            'email' => [
-                'required',
-                'email',
-                Rule::unique('gebruikers', 'email')->ignore($gebruiker->id),
-            ],
             'name' => 'required|string|max:255',
-            'password' => 'nullable|string|min:8|confirmed',
+            'email' => ['required', 'email', Rule::unique('gebruikers')->ignore($gebruiker->id)],
+            'studentnummer' => ['required', 'numeric', Rule::unique('gebruikers')->ignore($gebruiker->id)],
+            'klas' => ['required', Rule::in(['PALVSOD2A', 'PALVSOD2B', 'PALVSOD2C'])], // <--- toegevoegd
         ]);
 
-        $gebruiker->email = $validated['email'];
         $gebruiker->name = $validated['name'];
-
-        if (!empty($validated['password'])) {
-            $gebruiker->password = Hash::make($validated['password']);
-        }
+        $gebruiker->email = $validated['email'];
+        $gebruiker->studentnummer = $validated['studentnummer'];
+        $gebruiker->klas = $validated['klas'];
 
         $gebruiker->save();
-        return back();
+
+        return redirect('/dashboard')->with('success', 'Gebruiker bijgewerkt!');
     }
 
-    // Delete Student
     public function destroy($id)
     {
         Gebruiker::findOrFail($id)->delete();
         return back();
     }
-
-    // Admin Dashboard
-    public function dashboard()
-    {
-        $gebruikers = Gebruiker::where('role', 'student')->get();
-        return view('dashboard', ['gebruikers' => $gebruikers]);
-    }
-
-    // student Welcome
-    public function welcome()
-    {
-        return view('welcome');
-    }
 }
-

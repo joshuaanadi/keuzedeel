@@ -3,9 +3,19 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GebruikerController;
 
-Route::resource('gebruikers', GebruikerController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
+// Registration
+Route::get('/register', [GebruikerController::class, 'registerForm']);
+Route::post('/register', [GebruikerController::class, 'register']);
+// Login
 Route::get('/login', [GebruikerController::class, 'loginForm']);
 Route::post('/login', [GebruikerController::class, 'login']);
+// Logout
+Route::post('/logout', [GebruikerController::class, 'logout']);
+// Pages
+Route::get('/home', [GebruikerController::class, 'home']);
 Route::get('/dashboard', [GebruikerController::class, 'dashboard']);
-Route::get('/welcome', [GebruikerController::class, 'welcome']);
+// Admin
+Route::get('/gebruikers/{id}/edit', [GebruikerController::class, 'edit']);
+Route::put('/gebruikers/{id}', [GebruikerController::class, 'update']);
+Route::delete('/gebruikers/{id}', [GebruikerController::class, 'destroy']);
 

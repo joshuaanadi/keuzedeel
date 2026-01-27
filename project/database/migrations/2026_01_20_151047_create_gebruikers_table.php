@@ -8,18 +8,21 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('gebruiker', function (Blueprint $table) {
+        Schema::create('gebruikers', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
             $table->integer('studentnummer')->unique();
             $table->string('password');
             $table->string('name');
             $table->enum('role', ['admin', 'student'])->default('student');
+            $table->enum('klas', ['PALVSOD2A', 'PALVSOD2B', 'PALVSOD2C']);
             $table->timestamps();
         });
     }
+
     public function down(): void
     {
-        Schema::dropIfExists('gebruiker');
+        Schema::dropIfExists('gebruikers');
     }
 };
+
